@@ -6,4 +6,4 @@ echo $_POST["house"]."<br>";
 echo $_POST["year"]."<br>";
 echo $_POST["passwd"]."<br>";
 echo $_POST["role"]."<br>";
-?>
+?
