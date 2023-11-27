@@ -1,11 +1,14 @@
 <?php
 
-array_map("htmlspecialchars", $_POST);
-
 header('Location: users.php');
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 try{
 	include_once("connection.php");
+	array_map("htmlspecialchars", $_POST);
 
 	switch($_POST["role"]){
 		case "Pupil":
