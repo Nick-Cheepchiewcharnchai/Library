@@ -2,7 +2,7 @@
 <html>
 <head>
     
-    <title>users</title>
+    <title>Users</title>
     
 </head>
 <body>
@@ -23,17 +23,18 @@
         <input type="radio" name="role" value="Teacher"> Teacher<br>
         <input type="radio" name="role" value="Admin"> Admin<br>
         <input type="submit" value="Add User">
-    </form>   
+    </form>
+
     <?php
-	include_once('connection.php');
+        include_once('connection.php');
 
-	$stmt = $conn->prepare("SELECT * FROM tblusers");
-	$stmt->execute();
+        $stmt = $conn->prepare("SELECT * FROM tblusers");
+        $stmt->execute();
 
-	while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-		{
-			echo($row["Forename"].' '.$row["Surname"]."<br>");
-		}
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+            {
+                echo($row["Forename"].' '.$row["Surname"]."<br>");
+            }
     ?>  
 </body>
 </html>
