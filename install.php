@@ -1,7 +1,7 @@
 <?php
 include_once("connection.php");
-$stmt = $conn->prepare("DROP TABLE IF EXISTS TblUsers;
-CREATE TABLE TblUsers 
+$stmt = $conn->prepare("DROP TABLE IF EXISTS tblusers;
+CREATE TABLE tblusers 
 (UserID INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Gender VARCHAR(1) NOT NULL,
 Surname VARCHAR(20) NOT NULL,
