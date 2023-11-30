@@ -8,9 +8,10 @@
 <body>
 
     <?php
-        $_SESSION['backURL'] = $_SERVER['REQUEST_URI']
-        
         session_start(); 
+        $_SESSION['backURL'] = $_SERVER['REQUEST_URI']
+
+        
         if (!isset($_SESSION['name']))
         {   
             header("Location:login.php");
