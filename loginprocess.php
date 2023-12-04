@@ -6,14 +6,15 @@
 
     array_map("htmlspecialchars", $_POST);
 
-    $stmt = $conn->prepare("SELECT * FROM tblusers WHERE surname =:username ;" );
+    $stmt = $conn->prepare("SELECT * FROM tblusers WHERE forename =:username ;" );
     $stmt->bindParam(':username', $_POST['Username']);
+    $attempt= $_POST['passwd'];
     $stmt->execute();
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
     { 
         $hashed= $row['Pword'];
-        $attempt= $_POST['passwd'];
+        
         if(password_verify($attempt,$hashed)){
             $_SESSION['name']=$row["Surname"];
             if (!isset($_SESSION['backURL'])){
