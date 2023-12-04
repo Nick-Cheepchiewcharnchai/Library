@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <?php
+<?php
         session_start(); 
         $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
         if (!isset($_SESSION['name']))
