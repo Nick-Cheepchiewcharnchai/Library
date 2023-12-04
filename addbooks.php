@@ -1,5 +1,12 @@
 <?php
 
+session_start(); 
+$_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
+if (!isset($_SESSION['name']))
+{   
+    header("Location:login.php");
+}
+
 header('Location:books.php');
 
 ini_set('display_errors', 1);
