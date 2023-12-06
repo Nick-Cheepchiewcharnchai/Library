@@ -9,7 +9,7 @@
 
     <form action="loginprocess.php" method= "POST">
         User name:<input type="text" name="Username"><br>
-        Password:<input type="password" name="Pword"><br>
+        Password:<input type="password" name="Password"><br>
         <input type="submit" value="Login">
     </form>
 

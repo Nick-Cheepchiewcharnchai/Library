@@ -8,14 +8,14 @@
 <body>
 
     <?php
-        session_start(); 
-        $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
-        if (!isset($_SESSION['name']))
-        {   
-            header("Location:login.php");
-        }
+        #session_start(); 
+        #$_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
+        #if (!isset($_SESSION['name']))
+        #{   
+        #    header("Location:login.php");
+        #}
     ?>
-    
+
     <form action="addbooks.php" method="post">
         Book name:<input type="text" name="book"><br>
         Author forename:<input type="text" name="forename"><br>
