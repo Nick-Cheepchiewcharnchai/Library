@@ -20,7 +20,17 @@
         Book name:<input type="text" name="book"><br>
         Author forename:<input type="text" name="forename"><br>
         Author surname:<input type="text" name="surname"><br>
-        Genre:<input type="text" name="genre"><br>
+        Genre:<select name="genre">
+                <option value="Tragedy">Tragedy</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Romance">Romance</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="SciFi">Sci-Fi</option>
+                <option value="Mystery">Mystery</option>
+                <option value="NonFiction">Non-Fiction</option>
+                <option value="Horror">Horror</option>
+            </select>
+        <br>
         Published year:<input type="text" name="published"><br>
         <input type="submit" value="Add Book">
     </form>
