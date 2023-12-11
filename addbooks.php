@@ -10,7 +10,7 @@ try{
 	include_once('connection.php');
 	array_map("htmlspecialchars", $_POST);
 	
-	$stmt = $conn->prepare("INSERT INTO TblBooks (BookID,BookName,AuthorSurname,AuthorForename,Genre,PublishedYear)VALUES (NULL,:book,:surname,:forename,:genre,:published)");
+	$stmt = $conn->prepare("INSERT INTO TblBooks (BookID,BookName,AuthorSurname,AuthorForename,Genre,PublishedYear) VALUES (NULL,:book,:surname,:forename,:genre,:published)");
 
 	$stmt->bindParam(':book', $_POST["book"]);
 	$stmt->bindParam(':surname', $_POST["surname"]);
