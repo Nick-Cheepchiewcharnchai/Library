@@ -32,6 +32,8 @@
             </select>
         <br>
         Published year:<input type="text" name="published"><br>
+        <input type="radio" name="Availability" value="Available" checked> Available<br>
+        <input type="radio" name="Availability" value="NotAvailable"> Not available<br>
         <input type="submit" value="Add Book">
     </form>
 

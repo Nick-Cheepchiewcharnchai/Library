@@ -10,6 +10,15 @@ try{
 	include_once("connection.php");
 	array_map("htmlspecialchars", $_POST);
 	
+    switch($_POST["Availability"]){
+		case "NotAvailable":
+			$Availability=1;
+			break;
+		case "Available":
+			$Availability=0;
+			break;
+	}
+
 	$stmt = $conn->prepare("INSERT INTO TblBooks (BookID,BookName,AuthorSurname,AuthorForename,Genre,PublishedYear) VALUES (NULL,:book,:surname,:forename,:genre,:published)");
 
 	$stmt->bindParam(':book', $_POST["book"]);

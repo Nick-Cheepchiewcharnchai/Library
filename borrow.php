@@ -7,7 +7,7 @@
 </head>
 <body>
 
-	<form action="assignbook.php" method = "post">
+<form action="assignbook.php" method = "post">
 	<select name = "student">
 
 	<?php
@@ -40,11 +40,15 @@
 
 	<input type="submit" value="Borrow">
 
-	</form>
+</form>
 
 	<?php
         include_once('connection.php');
 
+		$stmt = $conn->prepare("SELECT * FROM TblUsers");
+		$stmt->execute();
+		$stmt = $conn->prepare("SELECT * FROM TblBooks");
+		$stmt->execute();
         $stmt = $conn->prepare("SELECT * FROM TblBorrow");
         $stmt->execute();
 
