@@ -27,7 +27,7 @@
 
 	<?php
 	include_once('connection.php');
-	$stmt = $conn->prepare("SELECT * FROM Tblbooks ORDER BY Bookname ASC");
+	$stmt = $conn->prepare("SELECT * FROM Tblbooks WHERE InLibrary = '0' ORDER BY Bookname ASC");
 	$stmt->execute();
 
 	while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
