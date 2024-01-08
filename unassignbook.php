@@ -11,13 +11,16 @@ try{
 	include_once("connection.php");
 	array_map("htmlspecialchars", $_POST);
 
-	$stmt = $conn->prepare("DELETE FROM TblBorrow (UserID,BookID) WHERE (:UserID,:BookID)");
+	$stmt = $conn->prepare("DELETE FROM TblBorrow WHERE UserID,:BookID)");
 
 	$stmt->bindParam(':UserID', $_POST["student"]);
 	$stmt->bindParam(':BookID', $_POST["book"]);
 	$stmt->execute();
 
-    $stmt = $conn->prepare("INSERT INTO TblBooks (InLibrary) WHERE (:BookID) VALUES ('0')");
+    $stmt = $conn->prepare("UPDATE TblBooks SET InLibrary = 0 WHERE BookID = book");
+
+	$stmt->bindParam(':UserID', $_POST["student"]);
+	$stmt->bindParam(':BookID', $_POST["book"]);
 	$stmt->execute();
 }
 
