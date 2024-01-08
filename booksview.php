@@ -5,6 +5,6 @@
     
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
-            echo($row["BookName"].' '.$row["BookID"]."<br>");
+            echo($row["BookName"].', '.$row["AuthorForename"].' '.$row["AuthorSurname"]."<br>");
         }
 ?>
