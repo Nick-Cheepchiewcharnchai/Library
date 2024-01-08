@@ -11,7 +11,7 @@ try{
 	include_once("connection.php");
 	array_map("htmlspecialchars", $_POST);
 
-	$stmt = $conn->prepare("INSERT INTO TblBorrow (UserID,BookID) VALUES (:UserID,:BookID)");
+	$stmt = $conn->prepare("DELETE FROM TblBorrow (UserID,BookID) WHERE (:UserID,:BookID)");
 
 	$stmt->bindParam(':UserID', $_POST["student"]);
 	$stmt->bindParam(':BookID', $_POST["book"]);
