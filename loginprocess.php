@@ -13,21 +13,19 @@
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
     { 
         $hashed= $row['Password'];
-        $attempt= $_POST['Password'];
         
         if(password_verify($attempt,$hashed)){
             $_SESSION['name']=$row["Forename"];
+            $_SESSION['loggedInID']=$row["UserID"];
             if (!isset($_SESSION['backURL'])){
-                $backURL= "/"; //Sets a default destination if no BackURL set (parent dir)
+                $backURL= "/";
             }else{
                 $backURL=$_SESSION['backURL'];
             }
             unset($_SESSION['backURL']);
-            echo "yes";
-            #header('Location: ' . $backURL);
+            header('Location: ' . $backURL);
         }else{
-            echo "no";
-            #header('Location: login.php');
+            header('Location: login.php');
         }
     }
 
