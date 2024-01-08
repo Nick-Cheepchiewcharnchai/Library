@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<form action="assignbook.php" method = "post">
+<form action="unassignbook.php" method = "post">
 	<select name = "student">
 
 	<?php
