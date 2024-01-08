@@ -17,8 +17,8 @@ try{
 	$stmt->bindParam(':BookID', $_POST["book"]);
 	$stmt->execute();
 
-    $stmt = $conn->prepare("UPDATE TblBooks SET InLibrary = '1' WHERE BookID = :BookID");
-	
+    $stmt = $conn->prepare("UPDATE TblBooks SET InLibrary = '1'");
+
 	$stmt->bindParam(':UserID', $_POST["student"]);
 	$stmt->bindParam(':BookID', $_POST["book"]);
 	$stmt->execute();
