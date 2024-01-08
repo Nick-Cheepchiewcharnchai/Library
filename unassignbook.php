@@ -17,7 +17,7 @@ try{
 	$stmt->bindParam(':BookID', $_POST["book"]);
 	$stmt->execute();
 
-    $stmt = $conn->prepare("INSERT INTO TblBooks (InLibrary) VALUES ('0')");
+    $stmt = $conn->prepare("INSERT INTO TblBooks (InLibrary) WHERE (:BookID) VALUES ('0')");
 	$stmt->execute();
 }
 
