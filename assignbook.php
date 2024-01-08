@@ -18,6 +18,7 @@ try{
 	$stmt->execute();
 
     $stmt = $conn->prepare("INSERT INTO TblBooks (InLibrary) VALUES ('1')");
+	$stmt->execute();
 }
 
 catch(PDOException $e)
