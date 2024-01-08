@@ -1,5 +1,5 @@
 <?php
-    include_once('connection.php')
+    include_once('connection.php');
     $stmt = $conn->prepare('SECLECT * FROM tblbooks');
     $stmt->execute();
     
